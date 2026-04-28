@@ -1,0 +1,89 @@
+course:
+  id: course-y3
+  year: 3
+  title: Year 3 Logistics/Maritime/Supply Chain Specialization
+  description: Specialist defensive architecture, threat modeling, internal tools, and company readiness.
+  modules:
+    - id: y3-m1-logistics-specialization
+      year: 3
+      course_id: course-y3
+      title: Logistics and Maritime Defensive Architecture
+      track: specialization
+      prerequisites: [y2-m1-applied-cyber-ai]
+      monthly_review: Portfolio and company-readiness checkpoint for Last Dices Pty Ltd.
+      lessons:
+        - id: y3-l-001
+          module_id: y3-m1-logistics-specialization
+          title: Logistics threat modeling workshop
+          objective: Threat model warehouses, fleet operations, and supplier dependencies.
+          estimated_minutes: 95
+          quiz_id: y3-qz-001
+        - id: y3-l-002
+          module_id: y3-m1-logistics-specialization
+          title: Maritime cyber awareness and integrity checks
+          objective: Defensive controls around navigation and operational data integrity.
+          estimated_minutes: 90
+          quiz_id: y3-qz-001
+      assignments:
+        - id: y3-asg-001
+          module_id: y3-m1-logistics-specialization
+          title: Internal security tooling plan
+          prompt: Propose AI-assisted internal tools for logistics cyber monitoring and reporting.
+          due_week: 18
+          rubric: [architecture clarity, operational feasibility, defensive value, governance]
+      quizzes:
+        - id: y3-qz-001
+          module_id: y3-m1-logistics-specialization
+          title: Specialist track checkpoint
+          track: logistics-maritime-supply
+          pass_score: 75
+      scenarios:
+        - id: y3-scn-001
+          module_id: y3-m1-logistics-specialization
+          title: Shipping manifest tampering response
+          track: logistics-cyber
+          domain: logistics
+          summary: Defend manifest integrity and chain-of-custody controls.
+        - id: y3-scn-002
+          module_id: y3-m1-logistics-specialization
+          title: Maritime navigation integrity issue
+          track: maritime-awareness
+          domain: maritime
+          summary: Investigate signal inconsistencies and implement cross-check controls.
+      weekly_plans:
+        - id: y3-wk1
+          week_number: 21
+          module_id: y3-m1-logistics-specialization
+          focus: Architecture thinking and portfolio execution.
+          daily_tasks:
+            mon:
+              - id: y3-wk1-mon-1
+                title: Draft threat model for warehouse control plane
+                lesson_id: y3-l-001
+                kind: lab
+                estimated_minutes: 55
+            tue:
+              - id: y3-wk1-tue-1
+                title: Build mitigation matrix for supplier compromise paths
+                lesson_id: y3-l-001
+                kind: practice
+                estimated_minutes: 50
+            wed:
+              - id: y3-wk1-wed-1
+                title: Maritime integrity control review
+                lesson_id: y3-l-002
+                kind: review
+                estimated_minutes: 45
+            thu:
+              - id: y3-wk1-thu-1
+                title: Draft internal tool architecture notes
+                lesson_id: y3-l-002
+                kind: practice
+                estimated_minutes: 60
+            fri:
+              - id: y3-wk1-fri-1
+                title: Portfolio update for Last Dices company readiness
+                lesson_id: y3-l-002
+                kind: reflection
+                estimated_minutes: 40
+          weekly_review: Assess specialization maturity and delivery quality.
