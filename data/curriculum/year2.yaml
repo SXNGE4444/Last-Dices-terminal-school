@@ -1,0 +1,83 @@
+course:
+  id: course-y2
+  year: 2
+  title: Year 2 Applied Cyber + AI
+  description: Applied security reasoning, authorized ethical methodology, AI engineering and tooling.
+  modules:
+    - id: y2-m1-applied-cyber-ai
+      year: 2
+      course_id: course-y2
+      title: Applied Cyber + AI Tool Workflows
+      track: applied-cyber-ai
+      prerequisites: [y1-m1-linux-network]
+      monthly_review: Evaluate blue-team response quality and AI workflow safety.
+      lessons:
+        - id: y2-l-001
+          module_id: y2-m1-applied-cyber-ai
+          title: Blue-team incident reasoning
+          objective: Triage, scope, containment planning, and post-incident documentation.
+          estimated_minutes: 85
+          quiz_id: y2-qz-001
+        - id: y2-l-002
+          module_id: y2-m1-applied-cyber-ai
+          title: AI assistant workflow safety
+          objective: Prompt pipelines, validation layers, and secure tool outputs.
+          estimated_minutes: 80
+          quiz_id: y2-qz-001
+      assignments:
+        - id: y2-asg-001
+          module_id: y2-m1-applied-cyber-ai
+          title: Authorized ethical lab report
+          prompt: Draft a defensively-focused lab report template for authorized testing contexts.
+          due_week: 3
+          rubric: [authorization clarity, methodology, defensive insights, reporting quality]
+      quizzes:
+        - id: y2-qz-001
+          module_id: y2-m1-applied-cyber-ai
+          title: Applied cyber and AI workflow checkpoint
+          track: applied-cyber-ai
+          pass_score: 72
+      scenarios:
+        - id: y2-scn-001
+          module_id: y2-m1-applied-cyber-ai
+          title: Supplier phishing response flow
+          track: supply-chain-defense
+          domain: supply_chain
+          summary: Build detection/escalation workflow for vendor-targeted phishing.
+      weekly_plans:
+        - id: y2-wk1
+          week_number: 9
+          module_id: y2-m1-applied-cyber-ai
+          focus: Shift from fundamentals to applied decision-making.
+          daily_tasks:
+            mon:
+              - id: y2-wk1-mon-1
+                title: Practice triage notes from mock alerts
+                lesson_id: y2-l-001
+                kind: lab
+                estimated_minutes: 50
+            tue:
+              - id: y2-wk1-tue-1
+                title: Build a local AI workflow with validation checkpoints
+                lesson_id: y2-l-002
+                kind: practice
+                estimated_minutes: 60
+            wed:
+              - id: y2-wk1-wed-1
+                title: Create API automation outline for incident summaries
+                lesson_id: y2-l-002
+                kind: practice
+                estimated_minutes: 45
+            thu:
+              - id: y2-wk1-thu-1
+                title: Review authorized ethical boundaries and reporting language
+                lesson_id: y2-l-001
+                kind: review
+                estimated_minutes: 30
+            fri:
+              - id: y2-wk1-fri-1
+                title: Weekly retrospective and skill-gap list
+                lesson_id: y2-l-002
+                kind: reflection
+                estimated_minutes: 30
+          weekly_review: Score confidence in incident response + AI workflow safety.

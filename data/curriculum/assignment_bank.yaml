@@ -1,0 +1,19 @@
+assignments:
+  - id: y1-asg-001
+    module_id: y1-m1-linux-network
+    scenario_id: y1-scn-001
+    title: Linux baseline defense brief
+    prompt: Draft a practical hardening baseline and explain why each control matters.
+    dimensions: [clarity, completeness, technical_accuracy, reasoning, defensive_quality]
+  - id: y2-asg-001
+    module_id: y2-m1-applied-cyber-ai
+    scenario_id: y2-scn-001
+    title: Supplier phishing response design
+    prompt: Write a response plan with detection, containment, and reporting steps.
+    dimensions: [clarity, completeness, technical_accuracy, reasoning, defensive_quality, logistics_domain_relevance]
+  - id: y3-asg-001
+    module_id: y3-m1-logistics-specialization
+    scenario_id: y3-scn-001
+    title: Logistics threat model and tool proposal
+    prompt: Propose a defensive architecture and an AI-assisted monitoring tool workflow.
+    dimensions: [clarity, completeness, technical_accuracy, reasoning, defensive_quality, logistics_domain_relevance]
