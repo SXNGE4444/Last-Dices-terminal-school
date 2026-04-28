@@ -1,0 +1,89 @@
+modules:
+  - id: ai-mod-001
+    level: beginner
+    title: Python and Data Foundations for AI Security Builders
+    topics:
+      - Python foundations
+      - Data handling with pandas
+      - APIs and JSON workflows
+      - Secure coding basics
+    practice_tasks:
+      - id: ai-task-001
+        title: Build a Python log parser for security events
+        level: beginner
+        objective: Parse local log files and produce structured summaries.
+        estimated_minutes: 45
+      - id: ai-task-002
+        title: Query a local API and normalize responses
+        level: beginner
+        objective: Collect API data and store normalized records in SQLite.
+        estimated_minutes: 50
+    assignments:
+      - id: ai-asg-001
+        module_id: ai-mod-001
+        title: Defensive Python utility pack
+        prompt: Build 3 small Python utilities for defensive operations (parser, validator, reporter).
+        deliverables:
+          - Python package with CLI entrypoints
+          - README with safe usage
+          - Test cases
+
+  - id: ai-mod-002
+    level: intermediate
+    title: Retrieval and LLM Application Engineering
+    topics:
+      - embeddings
+      - retrieval and vector stores
+      - LLM app building
+      - evaluation basics
+      - model safety guardrails
+    practice_tasks:
+      - id: ai-task-003
+        title: Build local retrieval index for cybersecurity notes
+        level: intermediate
+        objective: Chunk content, embed locally, and run retrieval queries.
+        estimated_minutes: 70
+      - id: ai-task-004
+        title: Implement answer-quality evaluator
+        level: intermediate
+        objective: Score answer relevance and safety against rubric prompts.
+        estimated_minutes: 60
+    assignments:
+      - id: ai-asg-002
+        module_id: ai-mod-002
+        title: Local-first RAG study assistant
+        prompt: Implement a local retrieval assistant for lessons with safe answer filters and logging.
+        deliverables:
+          - Retrieval pipeline code
+          - Evaluation report
+          - Safety policy file
+
+  - id: ai-mod-003
+    level: advanced
+    title: AI Systems, Agent Orchestration, and Security Tooling
+    topics:
+      - agent orchestration
+      - tool execution and policy checks
+      - model observability
+      - local model deployment patterns
+      - custom model experimentation roadmap
+    practice_tasks:
+      - id: ai-task-005
+        title: Build multi-agent workflow coordinator
+        level: advanced
+        objective: Coordinate planner/analyst/reviewer roles with audit logging.
+        estimated_minutes: 90
+      - id: ai-task-006
+        title: Add observability dashboard metrics for model behavior
+        level: advanced
+        objective: Track latency, hallucination flags, and policy violations.
+        estimated_minutes: 80
+    assignments:
+      - id: ai-asg-003
+        module_id: ai-mod-003
+        title: Internal AI cyber workflow prototype
+        prompt: Build an internal AI workflow for threat triage and defensive report generation.
+        deliverables:
+          - System architecture diagram
+          - Tooling code with policy hooks
+          - Evaluation + observability report
