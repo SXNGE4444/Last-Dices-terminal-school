@@ -1,0 +1,37 @@
+questions:
+  - id: qb-001
+    quiz_id: y1-qz-001
+    module_id: y1-m1-linux-network
+    lesson_id: y1-l-001
+    domain: linux-network
+    question: Which command safely changes file permissions for owner read/write only?
+    choices: ["chmod 777 file", "chmod 600 file", "chown root file", "umask 000"]
+    answer_index: 1
+    explanation: chmod 600 enforces least privilege for sensitive files.
+  - id: qb-002
+    quiz_id: y1-qz-001
+    module_id: y1-m1-linux-network
+    lesson_id: y1-l-002
+    domain: linux-network
+    question: What best limits lateral movement in warehouse environments?
+    choices: ["flat VLAN", "network segmentation", "shared admin account", "open SMB shares"]
+    answer_index: 1
+    explanation: Segmentation constrains blast radius and aids containment.
+  - id: qb-003
+    quiz_id: y2-qz-001
+    module_id: y2-m1-applied-cyber-ai
+    lesson_id: y2-l-001
+    domain: applied-cyber-ai
+    question: In authorized ethical labs, what must come first?
+    choices: ["exploit list", "written authorization", "credential dump", "internet scanning"]
+    answer_index: 1
+    explanation: Authorization defines legal and ethical boundaries before any test.
+  - id: qb-004
+    quiz_id: y3-qz-001
+    module_id: y3-m1-logistics-specialization
+    lesson_id: y3-l-001
+    domain: logistics-maritime-supply
+    question: Which control improves shipping manifest integrity?
+    choices: ["unsigned edits", "hash verification + approvals", "shared passwords", "deleted logs"]
+    answer_index: 1
+    explanation: Integrity verification and approval chains detect tampering.

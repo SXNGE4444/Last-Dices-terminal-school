@@ -1,0 +1,78 @@
+Screen {
+    background: #050705;
+    color: #3CFF78;
+}
+
+Header, Footer {
+    background: #0A120A;
+    color: #3CFF78;
+}
+
+#shell {
+    height: 1fr;
+    layout: horizontal;
+}
+
+#sidebar {
+    width: 30;
+    border: solid #2D7A48;
+    color: #3CFF78;
+    padding: 1;
+    margin-right: 1;
+}
+
+#workspace {
+    width: 1fr;
+}
+
+#screen-title {
+    border: solid #2D7A48;
+    background: #091109;
+    color: #3CFF78;
+    padding: 0 1;
+    margin-bottom: 1;
+}
+
+#status-line {
+    border: solid #2D7A48;
+    color: #F2B94B;
+    background: #081008;
+    padding: 0 1;
+    margin-bottom: 1;
+}
+
+.panel {
+    border: solid #2D7A48;
+    background: #070D07;
+    color: #3CFF78;
+    padding: 1;
+    width: 1fr;
+    min-height: 8;
+}
+
+.panel-alert {
+    border: solid #9D3A3A;
+    color: #FF5D5D;
+}
+
+.panel-warn {
+    border: solid #7A612D;
+    color: #F2B94B;
+}
+
+.row {
+    height: auto;
+    margin-bottom: 1;
+}
+
+@media (max-width: 110) {
+    #shell {
+        layout: vertical;
+    }
+
+    #sidebar {
+        width: 1fr;
+        margin-right: 0;
+        margin-bottom: 1;
+    }
+}
