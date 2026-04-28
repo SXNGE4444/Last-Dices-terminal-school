@@ -1,0 +1,43 @@
+project_ladder:
+  - id: ai-proj-01
+    stage: 1
+    title: Python SOC helper scripts
+    outcome: Operate scripts for parsing alerts and generating incident notes.
+  - id: ai-proj-02
+    stage: 2
+    title: API and data ingestion pipeline
+    outcome: Ingest security + logistics signals into local SQLite analytics layer.
+  - id: ai-proj-03
+    stage: 3
+    title: Retrieval assistant for school content
+    outcome: Answer curriculum questions with source-backed retrieval.
+  - id: ai-proj-04
+    stage: 4
+    title: Evaluation harness for AI answers
+    outcome: Score quality, safety, and policy compliance automatically.
+  - id: ai-proj-05
+    stage: 5
+    title: Multi-agent defensive analyst
+    outcome: Coordinate role-based agents for scenario triage.
+  - id: ai-proj-06
+    stage: 6
+    title: Internal logistics cyber copilot
+    outcome: Produce operationally useful defensive workflows for Last Dices Pty Ltd.
+
+model_building_pathway:
+  - Start with feature pipelines and baseline classifiers for simple tasks
+  - Learn prompt tuning and inference optimization for local LLMs
+  - Add evaluation datasets and guardrail regression checks
+  - Experiment with small custom model fine-tuning in sandboxed settings
+
+tool_building_pathway:
+  - Build CLI utilities with clear contracts
+  - Expose local APIs for reusable modules
+  - Add orchestration layers for multi-step AI tasks
+  - Add observability, alerts, and rollback strategies
+
+cybersecurity_tool_building_pathway:
+  - Threat triage assistant for alerts and incidents
+  - Vendor risk summarization and scoring tool
+  - Shipment integrity anomaly analysis workflow
+  - Defensive report generation for operations leadership

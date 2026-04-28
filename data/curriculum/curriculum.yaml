@@ -1,0 +1,141 @@
+lessons:
+  - id: y1-linux-001
+    year: 1
+    track: Linux foundations
+    title: Linux command line survival
+    objective: Navigate, inspect files, manage permissions, and secure shell basics.
+    estimated_minutes: 75
+  - id: y1-net-002
+    year: 1
+    track: Networking
+    title: Network fundamentals for defenders
+    objective: Understand ports, protocols, segmentation, and traffic visibility.
+    estimated_minutes: 90
+  - id: y1-cyber-003
+    year: 1
+    track: Cybersecurity foundations
+    title: Blue-team threat thinking
+    objective: Learn defensive analysis and incident lifecycle basics.
+    estimated_minutes: 90
+  - id: y2-ai-101
+    year: 2
+    track: AI engineering
+    title: Safe AI workflow design
+    objective: Build local AI workflows with input validation and audit logging.
+    estimated_minutes: 80
+  - id: y2-ai-120
+    year: 2
+    track: AI systems architecture
+    title: Model pipelines and observability
+    objective: Design secure AI systems with evaluation and monitoring.
+    estimated_minutes: 85
+  - id: y3-logi-201
+    year: 3
+    track: Logistics cybersecurity
+    title: Warehouse OT cyber resilience
+    objective: Identify logistics OT risks and defensive monitoring patterns.
+    estimated_minutes: 95
+  - id: y3-mari-202
+    year: 3
+    track: Maritime cyber awareness
+    title: Maritime navigation data integrity
+    objective: Assess AIS/GNSS integrity risks and response playbooks.
+    estimated_minutes: 100
+  - id: y3-supply-203
+    year: 3
+    track: Supply chain cyber defense
+    title: Supplier trust and software provenance
+    objective: Defend supply chain workflows using verification and segmentation.
+    estimated_minutes: 85
+
+tasks:
+  - id: t-y1-linux-shell
+    lesson_id: y1-linux-001
+    title: Practice file permissions and ownership labs
+    status: todo
+  - id: t-y1-net-map
+    lesson_id: y1-net-002
+    title: Build a port/protocol defensive cheat sheet
+    status: todo
+  - id: t-y2-ai-eval
+    lesson_id: y2-ai-120
+    title: Define an AI model quality and safety checklist
+    status: todo
+  - id: t-y3-logi-threat-model
+    lesson_id: y3-logi-201
+    title: Create a logistics warehouse threat model draft
+    status: todo
+
+goals:
+  - id: g-weekly-01
+    scope: weekly
+    title: Complete 5 lessons
+    target_value: 5
+  - id: g-weekly-02
+    scope: weekly
+    title: Submit 2 assignments
+    target_value: 2
+  - id: g-weekly-03
+    scope: weekly
+    title: Pass 1 quiz set
+    target_value: 1
+  - id: g-monthly-01
+    scope: monthly
+    title: Finish current module
+    target_value: 1
+  - id: g-monthly-02
+    scope: monthly
+    title: Run 2 defensive scenario drills
+    target_value: 2
+  - id: g-monthly-03
+    scope: monthly
+    title: Improve weighted score by 10 percent
+    target_value: 10
+
+assignments:
+  - id: a-y1-linux-001
+    lesson_id: y1-linux-001
+    title: Build a secure Linux baseline checklist
+    prompt: Create a defensive baseline checklist for a Kali Linux student workstation.
+    rubric:
+      - Access control hardening
+      - Logging and monitoring setup
+      - Backup and recovery steps
+  - id: a-y3-logi-201
+    lesson_id: y3-logi-201
+    title: Warehouse ransomware tabletop
+    prompt: Draft a defensive response plan for ransomware in a warehouse control network.
+    rubric:
+      - Containment actions
+      - Evidence handling
+      - Business continuity for logistics flow
+  - id: a-y3-supply-203
+    lesson_id: y3-supply-203
+    title: Supplier trust defense report
+    prompt: Write a supplier assurance workflow for software integrity and vendor access.
+    rubric:
+      - Verification checkpoints
+      - Access review controls
+      - Incident escalation steps
+
+quizzes:
+  - id: q-y1-net-002
+    lesson_id: y1-net-002
+    title: Networking fundamentals checkpoint
+    questions:
+      - question: Which control best limits lateral movement in a warehouse network?
+        choices: ["Flat network", "Network segmentation", "Shared admin account", "Open SMB shares"]
+        answer_index: 1
+      - question: Which log source helps detect supplier phishing attempts?
+        choices: ["DNS logs", "Monitor brightness settings", "Wallpaper file metadata", "Printer ink levels"]
+        answer_index: 0
+  - id: q-y2-ai-120
+    lesson_id: y2-ai-120
+    title: AI systems architecture checkpoint
+    questions:
+      - question: What improves trust in AI outputs for operations?
+        choices: ["No logging", "Evaluation metrics + monitoring", "Hidden prompts only", "Ignore feedback loops"]
+        answer_index: 1
+      - question: Which is safest for local-first model workflows?
+        choices: ["Unvalidated inputs", "Role-free execution", "Input validation and audit trails", "Shared root account"]
+        answer_index: 2
