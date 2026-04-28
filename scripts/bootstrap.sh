@@ -22,6 +22,7 @@ pip install -r requirements.txt || {
   echo "[WARN] You can still inspect code and run compile checks."
 }
 
+mkdir -p storage/import_materials storage/quarantine storage/logs storage/logs/scans
 mkdir -p import_materials quarantine logs logs/scans
 
 if command -v clamscan >/dev/null 2>&1; then
@@ -32,6 +33,9 @@ else
 fi
 
 export PYTHONPATH="${PYTHONPATH:-}:$(pwd)/src"
+export LDTS_REPO_ROOT="$(pwd)"
+export LDTS_STORAGE_ROOT="$(pwd)/storage"
+
 python -m last_dices_terminal_school.setup_seed || echo "[WARN] Seed setup skipped due to missing Python deps."
 
 echo "[OK] Bootstrap complete. Run: bash scripts/run_app.sh"

@@ -186,6 +186,15 @@ git clone <your-repo-url>
 cd Last-Dices-terminal-school
 ```
 
+### 2) Configure environment (optional)
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` if you want custom storage paths. By default, all runtime state lives under `./storage`.
+
+### 3) Bootstrap
 ### 2) Bootstrap
 
 Recommended:
@@ -206,6 +215,7 @@ Kali helper script (if you prefer distro-specific setup):
 bash scripts/bootstrap_kali.sh
 ```
 
+### 4) Activate environment (if needed)
 ### 3) Activate environment (if needed)
 
 ```bash
@@ -274,6 +284,7 @@ make test
 ```text
 .
 ├── data/                              # Curriculum, pathway, scenarios, domain assets
+├── storage/                           # Local runtime state (db, imports, quarantine, logs)
 ├── scripts/                           # Bootstrap + runtime helpers
 ├── src/last_dices_terminal_school/
 │   ├── agents/                        # Learning/support agent personas + hub

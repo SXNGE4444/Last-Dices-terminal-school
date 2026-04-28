@@ -26,6 +26,7 @@ if command -v apt-get >/dev/null 2>&1; then
   fi
 fi
 
+mkdir -p storage/import_materials storage/quarantine storage/logs storage/logs/scans
 mkdir -p import_materials quarantine logs logs/scans
 printf "[LAST DICES] Bootstrap complete.\n"
 printf "[LAST DICES] Run app: bash scripts/run_school.sh\n"
