@@ -1,0 +1,50 @@
+assignments:
+  - id: asg-logistics-001
+    track: logistics
+    scenario_id: scn-warehouse-ransomware
+    title: Warehouse ransomware continuity plan
+    prompt: Build a defensive response matrix covering detection, containment, recovery, and logistics continuity.
+    defensive_deliverables:
+      - Trigger-based containment workflow
+      - Warehouse fallback shipping process
+      - Restoration validation checklist
+
+  - id: asg-logistics-002
+    track: logistics
+    scenario_id: scn-handheld-compromise
+    title: Handheld scanner compromise response plan
+    prompt: Define MDM-led containment, credential hygiene, and scanner fleet trust restoration.
+    defensive_deliverables:
+      - Device isolation and re-enrollment process
+      - Authentication hardening controls
+      - Inventory reconciliation workflow
+
+  - id: asg-maritime-001
+    track: maritime
+    scenario_id: scn-maritime-integrity
+    title: Maritime signal integrity incident runbook
+    prompt: Create an integrity-validation and escalation runbook for maritime-adjacent logistics operations.
+    defensive_deliverables:
+      - Multi-source telemetry validation logic
+      - Escalation matrix by risk level
+      - Post-incident improvement actions
+
+  - id: asg-supply-001
+    track: supply_chain
+    scenario_id: scn-supplier-portal-compromise
+    title: Supplier portal hardening and response brief
+    prompt: Design preventative controls and incident response for compromised supplier identities.
+    defensive_deliverables:
+      - Identity and access control policy set
+      - Supplier incident response communication template
+      - Audit and monitoring strategy
+
+  - id: asg-supply-002
+    track: supply_chain
+    scenario_id: scn-cloud-shipment-exposure
+    title: Cloud shipment record exposure response
+    prompt: Produce a defensive response and prevention plan for publicly exposed shipment data.
+    defensive_deliverables:
+      - Immediate containment and notification steps
+      - Cloud policy remediation checklist
+      - Continuous assurance controls
