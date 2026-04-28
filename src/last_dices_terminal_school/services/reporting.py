@@ -31,6 +31,7 @@ class ProgressReportService:
         body = (
             f"SUMMARY\n{report.summary}\n\n"
             f"STRENGTHS\n- " + "\n- ".join(report.strengths) + "\n\n"
+            "NEXT ACTIONS\n- " + "\n- ".join(report.next_actions)
             f"NEXT ACTIONS\n- " + "\n- ".join(report.next_actions)
         )
         self.repo.save_report(report.title, body)

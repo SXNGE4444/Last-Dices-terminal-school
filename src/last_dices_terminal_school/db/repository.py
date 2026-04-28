@@ -72,6 +72,12 @@ class SchoolRepository:
                 "INSERT OR REPLACE INTO scenarios (id, title, focus) VALUES (:id, :title, :focus)",
                 normalized,
             )
+        with self._connect() as conn:
+            conn.executemany(
+                "INSERT OR REPLACE INTO scenarios (id, title, focus) VALUES (:id, :title, :focus)",
+                scenarios,
+            )
+            conn.commit()
 
     def save_report(self, title: str, body: str) -> None:
         with self._connect() as conn:
