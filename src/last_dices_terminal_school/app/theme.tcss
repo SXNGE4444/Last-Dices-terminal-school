@@ -67,4 +67,14 @@ Header, Footer {
 
 #main {
     width: 1fr;
+@media (max-width: 110) {
+    #shell {
+        layout: vertical;
+    }
+
+    #sidebar {
+        width: 1fr;
+        margin-right: 0;
+        margin-bottom: 1;
+    }
 }
