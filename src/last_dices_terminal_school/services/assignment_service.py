@@ -76,6 +76,9 @@ class AssignmentService:
 
     def _score_dimensions(self, content: str) -> GradingDimensions:
         words = len(content.split())
+
+        def contains(term: str) -> int:
+            return 1 if term in content.lower() else 0
         def contains(term: str) -> int:
             return 1 if term in content.lower() else 0
         contains = lambda s: 1 if s in content.lower() else 0
