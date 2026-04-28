@@ -57,6 +57,20 @@ class SchoolRepository:
             conn.commit()
 
     def save_scenarios(self, scenarios: list[dict[str, str]]) -> None:
+        normalized: list[dict[str, str]] = []
+        for scenario in scenarios:
+            normalized.append(
+                {
+                    "id": scenario["id"],
+                    "title": scenario["title"],
+                    "focus": scenario.get("focus") or scenario.get("severity", "general"),
+                }
+            )
+
+        with self._connect() as conn:
+            conn.executemany(
+                "INSERT OR REPLACE INTO scenarios (id, title, focus) VALUES (:id, :title, :focus)",
+                normalized,
         with self._connect() as conn:
             conn.executemany(
                 "INSERT OR REPLACE INTO scenarios (id, title, focus) VALUES (:id, :title, :focus)",

@@ -65,6 +65,8 @@ Header, Footer {
     margin-bottom: 1;
 }
 
+#main {
+    width: 1fr;
 @media (max-width: 110) {
     #shell {
         layout: vertical;
