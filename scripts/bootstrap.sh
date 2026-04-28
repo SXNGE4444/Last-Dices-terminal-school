@@ -23,6 +23,7 @@ pip install -r requirements.txt || {
 }
 
 mkdir -p storage/import_materials storage/quarantine storage/logs storage/logs/scans
+mkdir -p import_materials quarantine logs logs/scans
 
 if command -v clamscan >/dev/null 2>&1; then
   echo "[OK] ClamAV scanner detected."
