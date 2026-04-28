@@ -1,0 +1,136 @@
+scenarios:
+  - id: scn-warehouse-ransomware
+    title: Warehouse ransomware disruption
+    track: logistics
+    environment: warehouse systems + handheld scanners + WMS
+    summary: Ransomware encrypts warehouse management systems and disrupts outbound flow.
+    key_assets: [WMS database, scanner fleet, shipment queue, backup server]
+    likely_risks: [shipping delays, inventory mismatch, data loss, customer SLA breach]
+    defensive_controls: [network segmentation, immutable backups, EDR, incident runbook]
+    analysis_questions:
+      - id: q-1
+        question: Which business-critical process fails first and why?
+        focus: business continuity
+      - id: q-2
+        question: What telemetry would confirm containment success?
+        focus: detection-response
+  - id: scn-freight-phishing
+    title: Phishing against a freight forwarder
+    track: logistics
+    environment: freight forwarding email and booking systems
+    summary: Targeted phishing aims to redirect payment and shipment details.
+    key_assets: [email gateway, booking portal, payment workflows]
+    likely_risks: [invoice fraud, shipment rerouting, account takeover]
+    defensive_controls: [MFA, DMARC/SPF/DKIM, anomaly alerts, call-back verification]
+    analysis_questions:
+      - id: q-1
+        question: What controls detect social engineering before payment approval?
+        focus: preventive controls
+      - id: q-2
+        question: How should escalation work between ops and cyber team?
+        focus: escalation workflow
+  - id: scn-supplier-portal-compromise
+    title: Supplier portal compromise
+    track: supply_chain
+    environment: procurement and supplier integration portal
+    summary: Supplier credentials abused to alter order records and delivery metadata.
+    key_assets: [supplier portal, procurement records, API keys]
+    likely_risks: [fraudulent purchase orders, bad data propagation, vendor trust impact]
+    defensive_controls: [least privilege, conditional access, API key rotation, audit trails]
+    analysis_questions:
+      - id: q-1
+        question: Which identity controls reduce supplier account abuse risk?
+        focus: IAM
+      - id: q-2
+        question: How should procurement verify suspicious record changes?
+        focus: process assurance
+  - id: scn-manifest-tampering
+    title: Manifest tampering case
+    track: supply_chain
+    environment: shipment manifest and customs docs systems
+    summary: Shipment manifests are altered, creating chain-of-custody confusion.
+    key_assets: [manifest files, customs declarations, signing system]
+    likely_risks: [regulatory penalties, lost cargo traceability, fraud]
+    defensive_controls: [hash signing, immutable logs, role approvals]
+    analysis_questions:
+      - id: q-1
+        question: Which integrity signals indicate unauthorized modifications?
+        focus: integrity monitoring
+      - id: q-2
+        question: What recovery process restores trusted manifests?
+        focus: recovery
+  - id: scn-customs-disruption
+    title: Customs workflow disruption
+    track: supply_chain
+    environment: customs broker integration and submission workflow
+    summary: Disrupted customs data exchange causes clearance delays.
+    key_assets: [customs API integration, broker workflows, regulatory records]
+    likely_risks: [border delays, contract breaches, legal exposure]
+    defensive_controls: [resilient queueing, fallback submission process, validation checks]
+    analysis_questions:
+      - id: q-1
+        question: Which controls preserve legal compliance during outages?
+        focus: compliance continuity
+      - id: q-2
+        question: What fallback process keeps shipments moving safely?
+        focus: resilience engineering
+  - id: scn-handheld-compromise
+    title: Compromised handheld scanning devices
+    track: logistics
+    environment: warehouse handheld scanners and mobile MDM
+    summary: A subset of scanning devices exhibits suspicious behavior and data drift.
+    key_assets: [scanner devices, MDM console, stock count sync service]
+    likely_risks: [inventory errors, unauthorized access tokens, malware spread]
+    defensive_controls: [MDM lockdown, cert-based auth, rapid wipe/isolate playbook]
+    analysis_questions:
+      - id: q-1
+        question: How do you isolate compromised devices without halting operations?
+        focus: containment planning
+      - id: q-2
+        question: What telemetry identifies affected scanner groups quickly?
+        focus: observability
+  - id: scn-contractor-laptop
+    title: Contractor laptop breach risk
+    track: supply_chain
+    environment: vendor laptop with remote access to logistics systems
+    summary: Contractor endpoint compromise risks lateral movement into partner systems.
+    key_assets: [remote access gateway, contractor credentials, vendor integrations]
+    likely_risks: [third-party pivoting, credential theft, data leakage]
+    defensive_controls: [ZTNA, PAM, contractor segmentation, rapid credential reset]
+    analysis_questions:
+      - id: q-1
+        question: Which vendor access controls reduce blast radius immediately?
+        focus: third-party risk
+      - id: q-2
+        question: How should incident communication with vendor be structured?
+        focus: governance
+  - id: scn-maritime-integrity
+    title: Navigation integrity problem (maritime-adjacent)
+    track: maritime
+    environment: vessel tracking, AIS/GPS, port coordination systems
+    summary: Inconsistent location signals trigger concern over navigation integrity.
+    key_assets: [AIS feed, GPS telemetry, route planning dashboards]
+    likely_risks: [route confusion, safety incidents, delayed docking]
+    defensive_controls: [multi-source validation, geofence anomaly alerts, manual verification drills]
+    analysis_questions:
+      - id: q-1
+        question: Which cross-check data sources improve confidence in vessel position?
+        focus: integrity validation
+      - id: q-2
+        question: What is the safest escalation path for navigation anomalies?
+        focus: safety response
+  - id: scn-cloud-shipment-exposure
+    title: Exposed shipment records in cloud storage
+    track: supply_chain
+    environment: cloud object storage for shipment data
+    summary: Publicly accessible storage bucket exposes shipment and customer records.
+    key_assets: [cloud storage bucket, access policies, shipment data lake]
+    likely_risks: [privacy breach, extortion pressure, partner trust loss]
+    defensive_controls: [policy hardening, continuous config scanning, token rotation]
+    analysis_questions:
+      - id: q-1
+        question: What immediate containment actions reduce data exposure impact?
+        focus: incident containment
+      - id: q-2
+        question: Which long-term controls prevent repeat misconfiguration?
+        focus: preventive governance
