@@ -1,0 +1,83 @@
+course:
+  id: course-y1
+  year: 1
+  title: Year 1 Foundations
+  description: Linux/network/cyber/python fundamentals with study discipline.
+  modules:
+    - id: y1-m1-linux-network
+      year: 1
+      course_id: course-y1
+      title: Linux + Networking Foundations
+      track: foundations
+      prerequisites: []
+      monthly_review: Validate command fluency and network reasoning journal.
+      lessons:
+        - id: y1-l-001
+          module_id: y1-m1-linux-network
+          title: Linux shell survival
+          objective: Filesystem navigation, permissions, process hygiene.
+          estimated_minutes: 70
+          quiz_id: y1-qz-001
+        - id: y1-l-002
+          module_id: y1-m1-linux-network
+          title: Networking basics for defenders
+          objective: Ports, protocols, segmentation, packet visibility.
+          estimated_minutes: 75
+          quiz_id: y1-qz-001
+      assignments:
+        - id: y1-asg-001
+          module_id: y1-m1-linux-network
+          title: Workstation hardening checklist
+          prompt: Create a baseline hardening and logging checklist for a Kali learner host.
+          due_week: 2
+          rubric: [access control, logging, backup, patch discipline]
+      quizzes:
+        - id: y1-qz-001
+          module_id: y1-m1-linux-network
+          title: Linux and networking checkpoint
+          track: linux-network
+          pass_score: 70
+      scenarios:
+        - id: y1-scn-001
+          module_id: y1-m1-linux-network
+          title: Beginner logistics cyber awareness brief
+          track: logistics-cyber
+          domain: logistics
+          summary: Map basic warehouse IT assets and defensive priorities.
+      weekly_plans:
+        - id: y1-wk1
+          week_number: 1
+          module_id: y1-m1-linux-network
+          focus: Build Linux command rhythm and note-taking discipline.
+          daily_tasks:
+            mon:
+              - id: y1-wk1-mon-1
+                title: Learn ls/cd/cat and command history usage
+                lesson_id: y1-l-001
+                kind: study
+                estimated_minutes: 45
+            tue:
+              - id: y1-wk1-tue-1
+                title: Practice permissions with chmod/chown
+                lesson_id: y1-l-001
+                kind: lab
+                estimated_minutes: 40
+            wed:
+              - id: y1-wk1-wed-1
+                title: Build a personal command cheat sheet
+                lesson_id: y1-l-001
+                kind: reflection
+                estimated_minutes: 30
+            thu:
+              - id: y1-wk1-thu-1
+                title: Study port/protocol map and segmentation basics
+                lesson_id: y1-l-002
+                kind: study
+                estimated_minutes: 45
+            fri:
+              - id: y1-wk1-fri-1
+                title: Write weekly learning log and weak spots
+                lesson_id: y1-l-002
+                kind: review
+                estimated_minutes: 30
+          weekly_review: Review defensive vocabulary, Linux discipline, and network reasoning.
