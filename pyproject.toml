@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "last-dices-terminal-school"
+version = "0.1.0"
+description = "Local-first terminal learning OS for cybersecurity and AI engineering"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Last Dices Pty Ltd" }]
+dependencies = [
+  "textual>=0.64.0",
+  "rich>=13.7.0",
+  "pydantic>=2.7.0",
+  "PyYAML>=6.0.1",
+  "watchdog>=4.0.1",
+  "fastapi>=0.111.0",
+  "uvicorn>=0.30.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2.0"]
+
+[project.scripts]
+last-dices-school = "last_dices_terminal_school.main:main"
+last-dices-seed = "last_dices_terminal_school.setup_seed:main"
+last-dices-watch-imports = "last_dices_terminal_school.watch_imports:main"
+last-dices-import = "last_dices_terminal_school.import_cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
