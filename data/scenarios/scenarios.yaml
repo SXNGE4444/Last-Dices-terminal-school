@@ -1,0 +1,19 @@
+scenarios:
+  - id: scn-warehouse-ransomware
+    title: Warehouse ransomware
+    focus: Defensive containment and recovery in authorized simulation.
+  - id: scn-supplier-phishing
+    title: Supplier phishing
+    focus: Email analysis, user reporting workflow, and segmentation checks.
+  - id: scn-manifest-tampering
+    title: Shipping manifest tampering
+    focus: Integrity validation, anomaly detection, and chain-of-custody logging.
+  - id: scn-customs-disruption
+    title: Customs workflow disruption
+    focus: Continuity planning and secure fallback procedures.
+  - id: scn-maritime-integrity
+    title: Maritime navigation integrity issue
+    focus: Alert triage and cross-checking navigation data sources.
+  - id: scn-contractor-laptop
+    title: Contractor laptop compromise
+    focus: Endpoint isolation, credential reset, and vendor access review.

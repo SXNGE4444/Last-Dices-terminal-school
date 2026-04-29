@@ -1,0 +1,6 @@
+school_name: LAST DICES // TERMINAL SCHOOL OS
+version: 1.0
+years:
+  - year1.yaml
+  - year2.yaml
+  - year3.yaml

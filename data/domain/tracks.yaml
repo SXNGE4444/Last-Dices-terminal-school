@@ -1,0 +1,78 @@
+modules:
+  - id: mod-logistics-001
+    track: logistics
+    title: Logistics Cybersecurity Foundations
+    objectives:
+      - Defend warehouse systems and freight workflows
+      - Protect shipment integrity and scanner ecosystems
+      - Handle operational disruption with continuity planning
+    linked_scenarios:
+      - scn-warehouse-ransomware
+      - scn-freight-phishing
+      - scn-handheld-compromise
+    assignments:
+      - asg-logistics-001
+      - asg-logistics-002
+
+  - id: mod-maritime-001
+    track: maritime
+    title: Maritime Cyber Awareness for Logistics Teams
+    objectives:
+      - Understand AIS/GPS signal integrity risks
+      - Coordinate port logistics with safe escalation
+      - Validate navigation and schedule data consistency
+    linked_scenarios:
+      - scn-maritime-integrity
+    assignments:
+      - asg-maritime-001
+
+  - id: mod-supply-001
+    track: supply_chain
+    title: Supply Chain Cyber Defense and Vendor Security
+    objectives:
+      - Secure supplier portals and procurement workflows
+      - Mitigate contractor and third-party device risk
+      - Protect customs workflows and cloud shipment records
+    linked_scenarios:
+      - scn-supplier-portal-compromise
+      - scn-manifest-tampering
+      - scn-customs-disruption
+      - scn-contractor-laptop
+      - scn-cloud-shipment-exposure
+    assignments:
+      - asg-supply-001
+      - asg-supply-002
+
+case_studies:
+  - id: cs-logistics-ransomware
+    title: Regional warehouse outage case review
+    track: logistics
+    context: Multi-site distribution center lost WMS visibility for 6 hours.
+    learning_objectives:
+      - Prioritize recovery order for critical workflows
+      - Balance containment with shipping continuity
+    lessons_learned:
+      - Restore inventory consistency checks before full dispatch
+      - Predefine manual fallback shipping process
+
+  - id: cs-maritime-signal-integrity
+    title: Port coordination signal mismatch case
+    track: maritime
+    context: Vessel position feeds conflicted during high-traffic docking window.
+    learning_objectives:
+      - Validate multi-source maritime telemetry
+      - Escalate safely to operations and safety teams
+    lessons_learned:
+      - Secondary verification channel prevents high-impact routing errors
+      - Regular anomaly drills improve response speed
+
+  - id: cs-supplier-portal-abuse
+    title: Supplier account misuse in procurement platform
+    track: supply_chain
+    context: Compromised supplier account changed delivery records and approvals.
+    learning_objectives:
+      - Build strong supplier identity controls
+      - Apply tamper-evident procurement logging
+    lessons_learned:
+      - Approval separation reduces fraud likelihood
+      - Continuous IAM review catches risky dormant accounts
