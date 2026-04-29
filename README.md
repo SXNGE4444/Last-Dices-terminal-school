@@ -195,7 +195,6 @@ cp .env.example .env
 Edit `.env` if you want custom storage paths. By default, all runtime state lives under `./storage`.
 
 ### 3) Bootstrap
-### 2) Bootstrap
 
 Recommended:
 
@@ -216,7 +215,6 @@ bash scripts/bootstrap_kali.sh
 ```
 
 ### 4) Activate environment (if needed)
-### 3) Activate environment (if needed)
 
 ```bash
 source .venv/bin/activate

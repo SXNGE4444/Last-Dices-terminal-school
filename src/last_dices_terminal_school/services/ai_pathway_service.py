@@ -15,8 +15,8 @@ from last_dices_terminal_school.core.ai_pathway_models import (
 
 class AIPathwayService:
     def __init__(self, modules_path: Path, ladder_path: Path):
-        modules_payload = yaml.safe_load(modules_path.read_text())
-        ladder_payload = yaml.safe_load(ladder_path.read_text())
+        modules_payload = yaml.safe_load(modules_path.read_text()) or {}
+        ladder_payload = yaml.safe_load(ladder_path.read_text()) or {}
 
         modules: list[AIModule] = []
         for m in modules_payload.get("modules", []):

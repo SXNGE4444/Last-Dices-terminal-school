@@ -54,7 +54,6 @@ class LastDicesSchoolApp(App):
             loader = CurriculumLoader(settings.curriculum_file)
             lessons, tasks, goals, assignments, quizzes = loader.load()
             self.repo.save_lessons([lesson.model_dump() for lesson in lessons])
-            self.repo.save_lessons([l.model_dump() for l in lessons])
             self.repo.save_tasks(tasks)
             self.repo.save_goals(goals)
             self.repo.save_assignments(assignments)

@@ -34,8 +34,6 @@ class CurriculumEngine:
         curriculum = CurriculumModel(
             school_name=str(manifest.get("school_name", "LAST DICES // TERMINAL SCHOOL OS")),
             version=str(manifest.get("version", "1.0")),
-            school_name=manifest.get("school_name", "LAST DICES // TERMINAL SCHOOL OS"),
-            version=manifest.get("version", "1.0"),
             courses=courses,
         )
         return cls(curriculum)

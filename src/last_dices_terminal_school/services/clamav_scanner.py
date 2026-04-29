@@ -15,44 +15,33 @@ class ClamAVScanner:
         self.scans_dir.mkdir(parents=True, exist_ok=True)
 
     def scan_file(self, file_path: Path) -> ScanResultModel:
-        if not file_path.exists():
-            result = ScanResultModel(file_path=file_path, status=ScanStatus.failed, details="file missing")
-            self._write_log(result)
-            return result
-
         if shutil.which("clamscan") is None:
-            result = ScanResultModel(
-                file_path=file_path,
-                status=ScanStatus.failed,
-                details="clamscan not found",
+            return self._log(file_path, ScanStatus.failed, "clamscan missing")
+
+        try:
+            proc = subprocess.run(
+                ["clamscan", str(file_path)],
+                capture_output=True,
+                text=True,
+                timeout=30,
             )
-            self._write_log(result)
-            return result
+        except subprocess.TimeoutExpired:
+            return self._log(file_path, ScanStatus.failed, "clamscan timeout")
 
-        run = subprocess.run(
-            ["clamscan", "--no-summary", str(file_path)],
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        output = (run.stdout or run.stderr).strip()
-
-        if run.returncode == 0 and "OK" in output:
-            result = ScanResultModel(file_path=file_path, status=ScanStatus.clean, details=output)
-            self._write_log(result)
-            return result
-
+        output = ((proc.stdout or "") + (proc.stderr or "")).strip()
         signature = self._extract_signature(output)
-        quarantine_path = self.quarantine_dir / file_path.name
-        file_path.replace(quarantine_path)
-        result = ScanResultModel(
-            file_path=quarantine_path,
-            status=ScanStatus.quarantined,
-            details=output or "infected or suspicious",
-            signature=signature,
-        )
-        self._write_log(result)
-        return result
+
+        if proc.returncode == 0:
+            return self._log(file_path, ScanStatus.clean, "no threats detected", None)
+
+        if proc.returncode == 1:
+            destination = self.quarantine_dir / file_path.name
+            if file_path.exists():
+                shutil.move(str(file_path), str(destination))
+            return self._log(file_path, ScanStatus.quarantined, output or "infected", signature)
+
+        # returncode == 2 or other scanner failure states
+        return self._log(file_path, ScanStatus.failed, output or "clamscan scan failure", signature)
 
     def _extract_signature(self, output: str) -> str | None:
         if "FOUND" in output:
@@ -65,3 +54,19 @@ class ClamAVScanner:
             f.write(
                 f"{result.scanned_at.isoformat()} | {result.status.value} | {result.file_path} | {result.details}\n"
             )
+
+    def _log(
+        self,
+        file_path: Path,
+        status: ScanStatus,
+        details: str,
+        signature: str | None = None,
+    ) -> ScanResultModel:
+        result = ScanResultModel(
+            file_path=file_path,
+            status=status,
+            details=details,
+            signature=signature,
+        )
+        self._write_log(result)
+        return result

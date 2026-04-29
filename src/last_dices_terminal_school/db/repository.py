@@ -72,11 +72,6 @@ class SchoolRepository:
                 "INSERT OR REPLACE INTO scenarios (id, title, focus) VALUES (:id, :title, :focus)",
                 normalized,
             )
-        with self._connect() as conn:
-            conn.executemany(
-                "INSERT OR REPLACE INTO scenarios (id, title, focus) VALUES (:id, :title, :focus)",
-                scenarios,
-            )
             conn.commit()
 
     def save_report(self, title: str, body: str) -> None:
@@ -240,7 +235,7 @@ class SchoolRepository:
             lesson_count = conn.execute("SELECT COUNT(*) FROM lessons").fetchone()[0]
             task_done = conn.execute("SELECT COUNT(*) FROM tasks WHERE status = 'done'").fetchone()[0]
             task_total = conn.execute("SELECT COUNT(*) FROM tasks").fetchone()[0]
-            submission_count = conn.execute("SELECT COUNT(*) FROM submissions").fetchone()[0]
+            submission_count = conn.execute("SELECT COUNT(*) FROM assignment_submissions").fetchone()[0]
             profile = conn.execute("SELECT learner_name, specialization_track FROM learner_profile WHERE id = 1").fetchone()
 
             weekly_goals = [row[0] for row in conn.execute("SELECT title FROM goals WHERE scope = 'weekly' ORDER BY id LIMIT 3").fetchall()]

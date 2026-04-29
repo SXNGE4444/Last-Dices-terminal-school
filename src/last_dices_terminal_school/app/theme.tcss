@@ -65,16 +65,7 @@ Header, Footer {
     margin-bottom: 1;
 }
 
+/* Textual CSS: responsive rules are intentionally omitted for parser compatibility. */
 #main {
     width: 1fr;
-@media (max-width: 110) {
-    #shell {
-        layout: vertical;
-    }
-
-    #sidebar {
-        width: 1fr;
-        margin-right: 0;
-        margin-bottom: 1;
-    }
 }
